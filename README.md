@@ -1,4 +1,4 @@
-# AnimeDub.in — Hindi Anime Streaming Website
+# HindiAnimeDub — Hindi Anime Streaming Website
 
 A full-featured Hindi anime streaming website built with React + Vite, powered by the Hindi Anime API.
 
