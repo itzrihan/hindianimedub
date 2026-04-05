@@ -98,7 +98,7 @@ export default function Navbar() {
       <div className={styles.inner}>
         <Link to="/" className={styles.logo}>
           <span className={styles.logoIcon}>▶</span>
-          <span className={styles.logoText}><span className={styles.logoAccent}>Hindi</span>AnimeDub</span>
+          <span className={styles.logoText}><span className={styles.logoAccent}></span></span>
         </Link>
 
         <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ''}`}>
