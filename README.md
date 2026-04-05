@@ -59,7 +59,7 @@ src/
 
 ## 🔌 API
 
-All data comes from: `[https://hindi-anime-api-neon.vercel.app/api](https://github.com/itzrihan/Anime-World-Api)`
+All data comes from: `https://github.com/itzrihan/Anime-World-Api`
 
 Endpoints used:
 - `GET /home` — Home page data
