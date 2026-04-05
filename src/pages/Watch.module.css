@@ -1,0 +1,455 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: 60px;
+  background: var(--bg-void);
+}
+
+.inner {
+  padding-top: 90px;
+}
+
+.titleBar {
+  margin-bottom: 20px;
+}
+
+.backLink {
+  font-size: 13px;
+  color: var(--accent-fire);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+.backLink:hover { opacity: 0.75; }
+
+.animeTitle {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.epLabel {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Player */
+.playerWrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.servers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  flex-wrap: wrap;
+}
+
+.serversLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  margin-right: 4px;
+}
+
+.serverBtn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  transition: all 0.2s;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.serverBtn:hover {
+  border-color: var(--accent-fire);
+  color: var(--accent-fire);
+}
+
+.serverActive {
+  border-color: var(--accent-fire) !important;
+  background: var(--accent-fire-glow) !important;
+  color: var(--accent-fire) !important;
+}
+
+.playerBox {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+
+.iframe, .video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.playerLoading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--text-muted);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--bg-card);
+}
+
+.spinner {
+  width: 40px; height: 40px;
+  border: 3px solid var(--bg-surface);
+  border-top-color: var(--accent-fire);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.playerError {
+  padding: 40px;
+  text-align: center;
+  color: var(--accent-fire);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.noVideo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.noVideo span { font-size: 52px; }
+.noVideo p { font-size: 16px; }
+.noVideoSub { font-size: 13px !important; }
+
+/* Nav */
+.epNav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.navBtn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  transition: all 0.2s;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.navBtn:hover {
+  border-color: var(--accent-fire);
+  color: var(--accent-fire);
+}
+
+/* Episode list */
+.epListSection {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.epListTitle {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-body);
+}
+
+.epList {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.epItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.15s;
+}
+
+.epItem:last-child { border-bottom: none; }
+
+.epItem:hover { background: var(--bg-surface); }
+
+.epItemActive {
+  background: var(--accent-fire-glow) !important;
+  border-left: 3px solid var(--accent-fire);
+}
+
+.epItemNum {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.epItemActive .epItemNum {
+  background: var(--accent-fire);
+  color: white;
+}
+
+.epItemTitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.epItemActive .epItemTitle { color: var(--text-primary); }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Fullscreen button */
+.fullscreenBtn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 36px; height: 36px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.fullscreenBtn:hover {
+  background: var(--accent-fire);
+  border-color: var(--accent-fire);
+}
+
+/* Episode list header with page buttons */
+.epListHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.epPageBtns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.epPageBtn {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.epPageBtn:hover {
+  border-color: var(--accent-fire);
+  color: var(--accent-fire);
+}
+
+.epPageBtnActive {
+  background: var(--accent-fire) !important;
+  border-color: var(--accent-fire) !important;
+  color: white !important;
+}
+
+/* Episode season tag */
+.epSeasonTag {
+  background: var(--accent-fire-glow);
+  border: 1px solid var(--border-glow);
+  color: var(--accent-fire);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 20px;
+  font-family: var(--font-body);
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.epItemSeason {
+  font-size: 10px;
+  color: var(--accent-fire);
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: auto;
+  padding-left: 8px;
+}
+
+/* ── Season Dropdown on Watch page (same style as detail) ── */
+.seasonDropdownWrap {
+  position: relative;
+  display: inline-block;
+  min-width: 180px;
+}
+
+.seasonDropdownLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+}
+
+.seasonDropdownTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px 16px;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: left;
+}
+
+.seasonDropdownTrigger:hover,
+.seasonDropdownOpen {
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.09);
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--accent-fire);
+  transition: transform 0.2s ease;
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+.seasonDropdownMenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #1a1a2e;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 50;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+  animation: dropFade 0.15s ease;
+}
+
+.seasonDropdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 13px 18px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+}
+
+.seasonDropdownItem:last-child { border-bottom: none; }
+.seasonDropdownItem:hover { background: rgba(255,255,255,0.07); color: white; }
+
+.seasonDropdownItemActive {
+  color: var(--accent-fire) !important;
+  background: rgba(255,69,0,0.08) !important;
+}
+
+.seasonDropdownEpCount {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.seasonDropdownItemActive .seasonDropdownEpCount {
+  color: var(--accent-fire);
+  opacity: 0.7;
+}
+
+.epListHeaderLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.epListSeasonTag {
+  background: var(--accent-fire-glow);
+  border: 1px solid var(--border-glow);
+  color: var(--accent-fire);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-left: 10px;
+  font-family: var(--font-body);
+  vertical-align: middle;
+}
+
+@keyframes dropFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

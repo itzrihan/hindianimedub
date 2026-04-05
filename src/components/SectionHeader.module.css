@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bar {
+  width: 4px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--accent-fire), transparent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.viewAll {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-fire);
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.viewAll:hover { opacity: 0.75; }

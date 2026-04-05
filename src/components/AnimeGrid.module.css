@@ -1,0 +1,57 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 6), 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 1200px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+
+/* Skeleton */
+.skeletonCard {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.skeletonThumb {
+  aspect-ratio: 2/3;
+  width: 100%;
+}
+
+.skeletonInfo {
+  padding: 10px 12px 12px;
+}
+
+.skeletonTitle {
+  height: 14px;
+  width: 85%;
+  margin-bottom: 8px;
+}
+
+.skeletonSub {
+  height: 11px;
+  width: 55%;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 64px 0;
+  color: var(--text-muted);
+}
+
+.empty span { font-size: 48px; }
+.empty p { font-size: 18px; font-family: 'Inter', 'Segoe UI', sans-serif; }
